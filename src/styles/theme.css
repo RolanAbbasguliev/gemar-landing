@@ -1,0 +1,44 @@
+:root {
+  --font-size: 16px;
+  --background: #f7f0e3;
+  --foreground: #2c1a0e;
+  --primary: #8b6b3d;
+  --primary-foreground: #faf4e8;
+  --muted-foreground: #7a6040;
+  --accent: #c9a96e;
+  --border: rgba(139, 107, 61, 0.2);
+  --ring: rgba(201, 169, 110, 0.5);
+}
+
+@theme inline {
+  --font-display: "Cormorant Garamond", "Times New Roman", serif;
+  --font-sans: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    font-size: var(--font-size);
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-synthesis: none;
+  }
+
+  .font-display {
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+    letter-spacing: -0.015em;
+  }
+}
